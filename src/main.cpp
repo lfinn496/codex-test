@@ -88,8 +88,9 @@ int main(int argc, char** argv) {
     const auto tracks = tracker.tracks();
     std::cout << "Generated tracks: " << tracks.size() << "\n";
     for (const auto& t : tracks) {
-        std::cout << "id=" << t.id << " p_exist=" << std::fixed << std::setprecision(3) << t.existence_probability
-                  << " ecef_xyz=[" << t.state.x[0] << ", " << t.state.x[1] << ", " << t.state.x[2] << "]\n";
+        std::cout << "track_id=" << t.id << " p_exist=" << std::fixed << std::setprecision(3) << t.existence_probability
+                  << " ecef_pos_m=[" << t.state.x[0] << ", " << t.state.x[1] << ", " << t.state.x[2] << "]"
+                  << " ecef_vel_mps=[" << t.state.x[3] << ", " << t.state.x[4] << ", " << t.state.x[5] << "]\n";
     }
 
     return 0;
